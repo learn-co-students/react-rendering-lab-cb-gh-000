@@ -11,14 +11,33 @@
 
 ## Overview
 
-We want to give students practice experience hooking into each part of the
-updating phase of the React component lifecycle.
+In this module, we're going to have a go at actually using each of the component lifecycle methods.
 
-`componentWillReceiveProps()`
-`shouldComponentUpdate()`
-`componentWillUpdate()`
-`render()` (kind of)
-`componentDidUpdate()`
+### `componentWillReceiveProps()`
+Let's have a look at the first section. This is a little translation app with two components: `Translation` and
+`Translator`. The `Translator` has a button. Pressing the button will choose one of ['morning', 'midday', 'evening']
+to pass into the `Translator`. Try pressing the button now. Alas, the code gets passed through, but the translation does
+not get generated. Looks like something is missing!
+
+Have another look at the `Translation` component. Looks like there is already a function to do the translation for
+you, `translate(greetingCode)`, it's just never called! Update the `Translation` function to use
+`componentWillReceiveProps()` which should call the translate function. If you've done this correctly, one of your
+test should now be passing!
+
+This is all well and good and our little translator app is working perfectly. However, we've got a bit of an
+inefficiency. Notice that because the `greetingCode` is generated automatically, it is possible for the same greeting
+code to be passed in twice in a row, however we're still recalsulating it every time.
+
+Update the `componentWillReceiveProps()` method in `Translation` to include a check so that it will not call the
+`translate()` method when the passed in `greetingCode` is the same as the current one.
+
+By the end of this secion, all the tests undet `Translation` section should be passing.
+
+
+### `shouldComponentUpdate()`
+### `componentWillUpdate()`
+### `render()` (kind of)
+### `componentDidUpdate()`
 
 ## Resources
 
