@@ -2,6 +2,7 @@ const React = require('react');
 const { shallow } = require('enzyme');
 
 const Translation = require('../components/Translation');
+const Circle = require('../components/Circle');
 
 
 describe('Translation', () => {
@@ -18,5 +19,14 @@ describe('Translation', () => {
     wrapper.setProps({ greetingCode: 'morning' });
     expect(spy.calls.length).toEqual(1);
     Translation.prototype.translate.restore();
+  });
+});
+
+describe('Circle', () => {
+  it('does not re-render when the same color is passed in twice', () => {
+    const spy = expect.spyOn(Circle.prototype, 'render').andCallThrough();
+    const wrapper = shallow(<Circle color='red' />);
+    wrapper.setProps({ color: 'red' });
+    expect(spy.calls.length).toEqual(1);
   });
 });

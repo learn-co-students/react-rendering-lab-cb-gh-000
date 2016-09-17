@@ -31,10 +31,23 @@ code to be passed in twice in a row, however we're still recalsulating it every 
 Update the `componentWillReceiveProps()` method in `Translation` to include a check so that it will not call the
 `translate()` method when the passed in `greetingCode` is the same as the current one.
 
-By the end of this secion, all the tests undet `Translation` section should be passing.
+By the end of this secion, all the tests under `Translation` section should be passing.
 
 
 ### `shouldComponentUpdate()`
+For this section, run the sample app and open the developer console. Look at the second section of tasks. You should
+see 3 circles: red, yellow and green. There is also a button which swaps the color of red and green circles. If you look
+at the developer console, we are logging out a message whenever a circle is re-rendered. Notice that all 3 circles get
+re-rendered whenever we swap the colours.
+
+The easiest way to prevent this un-necessary re-render is by using the `shouldComponentUpdate()` lifecycle hook. Open
+`Circle.js` and add a `shouldComponentUpdate()` which will return `true` only if the new color being passed in is different
+from the existing one.
+
+By the end of this secion, the test under `Circle` should be passing.
+
+
+
 ### `componentWillUpdate()`
 ### `render()` (kind of)
 ### `componentDidUpdate()`

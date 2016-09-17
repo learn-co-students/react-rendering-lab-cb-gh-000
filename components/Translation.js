@@ -2,6 +2,8 @@ const React = require('react');
 
 class Translation extends React.Component {
 
+  // TODO: create a componentWillReceiveProps here
+
   constructor(props) {
     super(props);
     this.state = { greeting: '' }

@@ -13,3 +13,22 @@ html {
   background-color: white;
   padding: 10px;
 }
+
+.green {
+  background-color: #128B82;
+}
+
+.red {
+  background-color: #C32600;
+}
+
+.yellow {
+  background-color: #F2AC10;
+}
+
+.circle {
+  display: inline-block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px; 
+}

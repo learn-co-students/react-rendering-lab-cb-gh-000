@@ -1,9 +1,13 @@
 const Translator = require('./components/Translator');
+const Circles = require('./components/Circles');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
 ReactDOM.render(
-  <div className="container"><Translator /></div>,
+  <div>
+    <div className="container"><Translator /></div>
+    <div className="container"><Circles /></div>
+  </div>,
   document.getElementById('main')
 );
 
