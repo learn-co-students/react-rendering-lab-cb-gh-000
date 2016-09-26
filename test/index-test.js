@@ -46,7 +46,7 @@ describe('Pusheen', () => {
   it('calls the function to resize the pusheen whenever the component re-renders', () => {
     const spy = expect.spyOn(Pusheen.prototype, 'resizePusheen');
     const wrapper = shallow(<Pusheen />);
-    wrapper.find('button').first().simulate('click');
+    wrapper.instance().componentDidUpdate();
     expect(spy.calls.length).toEqual(1);
   });
 });
