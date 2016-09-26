@@ -3,6 +3,7 @@ const { shallow } = require('enzyme');
 
 const Translation = require('../components/Translation');
 const Circle = require('../components/Circle');
+const Animation = require('../components/Animation');
 const Pusheen = require('../components/Pusheen');
 
 
@@ -28,6 +29,15 @@ describe('Circle', () => {
     const spy = expect.spyOn(Circle.prototype, 'render').andCallThrough();
     const wrapper = shallow(<Circle color='red' />);
     wrapper.setProps({ color: 'red' });
+    expect(spy.calls.length).toEqual(1);
+  });
+});
+
+describe('Animation', () => {
+  it('calls the function to resize the pusheen whenever the component re-renders', () => {
+    const spy = expect.spyOn(Animation.prototype, 'showLoadingBar');
+    const wrapper = shallow(<Animation />);
+    wrapper.instance().componentWillUpdate();
     expect(spy.calls.length).toEqual(1);
   });
 });

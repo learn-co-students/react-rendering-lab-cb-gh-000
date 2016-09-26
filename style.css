@@ -44,3 +44,17 @@ html {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+#progress-bar {
+  height: 30px;
+  background-color: #F27983;
+}
+
+.off {
+  width: 0%;
+}
+
+.on {
+  width: 100%;
+  transition: 2s;
+}
