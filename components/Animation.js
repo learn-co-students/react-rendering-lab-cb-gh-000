@@ -3,6 +3,9 @@ const React = require('react');
 class Animation extends React.Component {
 
   // TODO: create a componentWillUpdate() here
+  componentWillUpdate() {
+    this.showLoadingBar();
+  }
 
   constructor(props) {
     super(props);

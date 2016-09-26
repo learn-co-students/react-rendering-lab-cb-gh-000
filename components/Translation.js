@@ -3,6 +3,11 @@ const React = require('react');
 class Translation extends React.Component {
 
   // TODO: create a componentWillReceiveProps here
+  componentWillReceiveProps(nextProps) {
+    if (this.props.greetingCode !== nextProps.greetingCode) {
+      this.translate(nextProps.greetingCode);
+    }
+  }
 
   constructor(props) {
     super(props);

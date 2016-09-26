@@ -3,6 +3,9 @@ const React = require('react');
 class Pusheen extends React.Component {
 
   // TODO: create a componentDidUpdate() here
+  componentDidUpdate() {
+    this.resizePusheen();
+  }
 
   resizePusheen() {
     let pusheen = document.getElementById("pusheen");
