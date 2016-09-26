@@ -4,7 +4,7 @@ html {
 }
 
 .container {
-  width: 100%;
+  width: calc(50% - 60px);
   margin: 20px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -12,6 +12,8 @@ html {
   text-align: center;
   background-color: white;
   padding: 10px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .green {
@@ -31,4 +33,8 @@ html {
   border-radius: 50%;
   width: 100px;
   height: 100px; 
+}
+
+.pusheen-container {
+  text-align: center;
 }
