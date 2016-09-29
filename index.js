@@ -1,6 +1,6 @@
-const Translator = require('./components/Translator');
+const Survey = require('./components/Survey');
 const Circles = require('./components/Circles');
-const Pusheen = require('./components/Pusheen');
+const Pikachu = require('./components/Pikachu');
 const Animation = require('./components/Animation');
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -9,7 +9,7 @@ ReactDOM.render(
   <div>
     <div className="container">
       <div className="title">componentWillReceiveProps()</div>
-      <Translator />
+      <Survey />
     </div>
     <div className="container">
       <div className="title">shouldComponentUpdate()</div>
@@ -21,7 +21,7 @@ ReactDOM.render(
     </div>
     <div className="container">
       <div className="title">componentDidUpdate()</div>
-      <Pusheen />
+      <Pikachu />
     </div>
   </div>,
   document.getElementById('main')

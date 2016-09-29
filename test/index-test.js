@@ -1,26 +1,29 @@
 const React = require('react');
 const { shallow } = require('enzyme');
 
-const Translation = require('../components/Translation');
+const Rating = require('../components/Rating');
 const Circle = require('../components/Circle');
 const Animation = require('../components/Animation');
-const Pusheen = require('../components/Pusheen');
+const Pikachu = require('../components/Pikachu');
 
 
-describe('Translation', () => {
-  it('translates the new greeting code when one gets passed in from the props', () => {
-    const wrapper = shallow(<Translation />);
-    wrapper.setProps({ greetingCode: 'morning' });
-    expect(wrapper.state().greeting).toEqual('Good morning!');
+describe('Rating', () => {
+  it('sets the increasing state correctly', () => {
+    const wrapper = shallow(<Rating rating={1} />);
+    wrapper.setProps({ rating: 2 });
+    expect(wrapper.state()).toEqual({ increasing: true, decreasing: false });
   });
 
-  it('does not translate the new greeting code if it is the same as the previous greeting code', () => {
-    const spy = expect.spyOn(Translation.prototype, 'translate');
-    const wrapper = shallow(<Translation />);
-    wrapper.setProps({ greetingCode: 'morning' });
-    wrapper.setProps({ greetingCode: 'morning' });
-    expect(spy.calls.length).toEqual(1);
-    Translation.prototype.translate.restore();
+  it('sets the increasing state correctly', () => {
+    const wrapper = shallow(<Rating rating={1} />);
+    wrapper.setProps({ rating: -4 });
+    expect(wrapper.state()).toEqual({ increasing: false, decreasing: true });
+  });
+
+  it('sets the stable state correctly', () => {
+    const wrapper = shallow(<Rating rating={1} />);
+    wrapper.setProps({ rating: 1 });
+    expect(wrapper.state()).toEqual({ increasing: false, decreasing: false });
   });
 });
 
@@ -34,7 +37,7 @@ describe('Circle', () => {
 });
 
 describe('Animation', () => {
-  it('calls the function to resize the pusheen whenever the component re-renders', () => {
+  it('triggers the loading bar when a rerender is about to take place ', () => {
     const spy = expect.spyOn(Animation.prototype, 'showLoadingBar');
     const wrapper = shallow(<Animation />);
     wrapper.instance().componentWillUpdate();
@@ -42,10 +45,10 @@ describe('Animation', () => {
   });
 });
 
-describe('Pusheen', () => {
-  it('calls the function to resize the pusheen whenever the component re-renders', () => {
-    const spy = expect.spyOn(Pusheen.prototype, 'resizePusheen');
-    const wrapper = shallow(<Pusheen />);
+describe('Pikachu', () => {
+  it('calls the function to resize the pikachu whenever the component re-renders', () => {
+    const spy = expect.spyOn(Pikachu.prototype, 'resizePikachu');
+    const wrapper = shallow(<Pikachu />);
     wrapper.instance().componentDidUpdate();
     expect(spy.calls.length).toEqual(1);
   });
