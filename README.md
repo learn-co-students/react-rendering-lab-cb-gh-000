@@ -14,24 +14,15 @@
 In this module, we're going to have a go at actually using each of the component lifecycle methods.
 
 ### `componentWillReceiveProps()`
-Let's have a look at the first section. This is a little translation app with two components: `<Translation />` and
-`<Translator />`. The `<Translator />` has a button. Pressing the button will choose one of ['morning', 'midday', 'evening']
-to pass into the `<Translator />`. Try pressing the button now. Alas, the code gets passed through, but the translation does
-not get generated. Looks like something is missing!
+Let's have a look at the first section. This is a little online survey of a book. People can rate the
+book based on how much they enjoyed it. They have 3 options: 'loved it', 'hated it' and 'indifferent'.
+We want to record not only the score the audience gave to the book, but also the trend of ratings as
+they are being given. So for example, if someone likes the book, the average score is *increasing*, if they
+dislike the play, it would be *devreasing* and if they're indifferent the score is *stable*. Have a look at
+`<Rating />` and `<Survey />` and implement a `componentWillReceiveProps()` which will copare the `nextProps.rating`
+(passed into the method) to `this.props.rating` and calls `this.setState` with the correct values.
 
-Have another look at the `<Translation />` component. Looks like there is already a function to do the translation for
-you, `translate(greetingCode)`, it's just never called! Update the `<Translation />` function to use
-`componentWillReceiveProps()` which should call the translate function. If you've done this correctly, one of your
-tests should now be passing!
-
-This is all well and good and our little translator app is working perfectly. However, we've got a bit of an
-inefficiency. Notice that because the `greetingCode` is generated automatically, it is possible for the same greeting
-code to be passed in twice in a row, however we're still recalculating it every time.
-
-Update the `componentWillReceiveProps()` method in `<Translation />` to include a check so that it will not call the
-`translate()` method when the passed in `greetingCode` is the same as the current one.
-
-By the end of this section, all the tests under `<Translation />` section should be passing.
+By the end of this section, all the tests under `<Rating />` section should be passing.
 
 
 ### `shouldComponentUpdate()`

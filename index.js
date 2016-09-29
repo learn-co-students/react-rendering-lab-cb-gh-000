@@ -1,4 +1,4 @@
-const Translator = require('./components/Translator');
+const Survey = require('./components/Survey');
 const Circles = require('./components/Circles');
 const Pikachu = require('./components/Pikachu');
 const Animation = require('./components/Animation');
@@ -9,7 +9,7 @@ ReactDOM.render(
   <div>
     <div className="container">
       <div className="title">componentWillReceiveProps()</div>
-      <Translator />
+      <Survey />
     </div>
     <div className="container">
       <div className="title">shouldComponentUpdate()</div>
