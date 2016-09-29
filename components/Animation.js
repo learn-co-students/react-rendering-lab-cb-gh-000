@@ -2,15 +2,16 @@ const React = require('react');
 
 class Animation extends React.Component {
 
-  // TODO: create a componentWillUpdate() here
-
   constructor(props) {
     super(props);
     this.state = {
       url: ' http://placehold.it/500x150'
     };
     this.showLoadingBar = this.showLoadingBar.bind(this);
+    this.getNewCat = this.getNewCat.bind(this);
   }
+
+  // TODO: create a componentWillUpdate() here
 
   getNewCat() {
     fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC')
@@ -26,14 +27,14 @@ class Animation extends React.Component {
   showLoadingBar() {
     const progressBar = document.getElementById('progress-bar');
     progressBar.className = 'off on';
-    setTimeout(() => progressBar.className = 'off', 3000);
+    setTimeout(() => progressBar.className = 'off', 1100);
   }
 
   render() {
     return (
       <div>
         <img src={this.state.url} height="100px"/>
-        <div><button onClick={() => this.getNewCat()}>New random .gif!</button></div>
+        <div><button onClick={this.getNewCat}>New random .gif!</button></div>
       </div>
     )
   }

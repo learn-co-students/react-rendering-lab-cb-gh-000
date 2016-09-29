@@ -4,7 +4,7 @@ const { shallow } = require('enzyme');
 const Translation = require('../components/Translation');
 const Circle = require('../components/Circle');
 const Animation = require('../components/Animation');
-const Pusheen = require('../components/Pusheen');
+const Pikachu = require('../components/Pikachu');
 
 
 describe('Translation', () => {
@@ -34,7 +34,7 @@ describe('Circle', () => {
 });
 
 describe('Animation', () => {
-  it('calls the function to resize the pusheen whenever the component re-renders', () => {
+  it('triggers the loading bar when a rerender is about to take place ', () => {
     const spy = expect.spyOn(Animation.prototype, 'showLoadingBar');
     const wrapper = shallow(<Animation />);
     wrapper.instance().componentWillUpdate();
@@ -42,10 +42,10 @@ describe('Animation', () => {
   });
 });
 
-describe('Pusheen', () => {
-  it('calls the function to resize the pusheen whenever the component re-renders', () => {
-    const spy = expect.spyOn(Pusheen.prototype, 'resizePusheen');
-    const wrapper = shallow(<Pusheen />);
+describe('Pikachu', () => {
+  it('calls the function to resize the pikachu whenever the component re-renders', () => {
+    const spy = expect.spyOn(Pikachu.prototype, 'resizePikachu');
+    const wrapper = shallow(<Pikachu />);
     wrapper.instance().componentDidUpdate();
     expect(spy.calls.length).toEqual(1);
   });

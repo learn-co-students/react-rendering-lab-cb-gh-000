@@ -2,12 +2,12 @@ const React = require('react');
 
 class Translation extends React.Component {
 
-  // TODO: create a componentWillReceiveProps here
-
   constructor(props) {
     super(props);
-    this.state = { greeting: '' }
+    this.state = { greeting: '' };
   }
+
+  // TODO: create a componentWillReceiveProps here
 
   translate(greetingCode) {
     const mapGreeting = {
