@@ -18,8 +18,8 @@ Let's have a look at the first section. This is a little online survey of a book
 book based on how much they enjoyed it. They have 3 options: 'loved it', 'hated it' and 'indifferent'.
 We want to record not only the score the audience gave to the book, but also the trend of ratings as
 they are being given. So for example, if someone likes the book, the average score is *increasing*, if they
-dislike the play, it would be *devreasing* and if they're indifferent the score is *stable*. Have a look at
-`<Rating />` and `<Survey />` and implement a `componentWillReceiveProps()` which will copare the `nextProps.rating`
+dislike the play, it would be *decreasing* and if they're indifferent the score is *stable*. Have a look at
+`<Rating />` and `<Survey />` and implement a `componentWillReceiveProps()` which will compare the `nextProps.rating`
 (passed into the method) to `this.props.rating` and calls `this.setState` with the correct values.
 
 By the end of this section, all the tests under `<Rating />` section should be passing.
