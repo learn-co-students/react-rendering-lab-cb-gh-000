@@ -31,15 +31,6 @@ class Survey extends React.Component {
     this.forceUpdate();
   }
 
-  newGreeting() {
-    const greetings = ['morning', 'midday', 'evening'];
-    const randomGreeting = random(greetings);
-    this.setState({
-      greetingCode: randomGreeting,
-      numGreetings: this.state.numGreetings + 1
-    });
-  }
-
   render() {
     return (
       <div>
