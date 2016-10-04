@@ -28,7 +28,7 @@ class Survey extends React.Component {
   }
 
   maintainRating() {
-    this.setState({ rating: this.state.rating });
+    this.forceUpdate();
   }
 
   newGreeting() {
