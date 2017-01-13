@@ -18,7 +18,7 @@ Let's have a look at the first section. This is a little online survey of a book
 book based on how much they enjoyed it. They have 3 options: 'loved it', 'hated it' and 'indifferent'.
 We want to record not only the score the audience gave to the book, but also the trend of ratings as
 they are being given. So for example, if someone likes the book, the average score is *increasing*, if they
-dislike the play, it would be *decreasing* and if they're indifferent the score is *stable*. Have a look at
+dislike the book, it would be *decreasing* and if they're indifferent the score is *stable*. Have a look at
 `<Rating />` and `<Survey />` and implement a `componentWillReceiveProps()` which will compare the `nextProps.rating`
 (passed into the method) to `this.props.rating` and calls `this.setState` with the correct values.
 
@@ -53,7 +53,7 @@ By the end of this section, the test under `<Animation />` should be passing.
 
 ### `componentDidUpdate()`
 `componentDidUpdate()` is generally used to interact with elements outside of React. Suppose we had a Pikachu library that
-handles rendering a pusheen on the page. The pusheen image is not part of the React application, but we need to be able to
+handles rendering a Pikachu on the page. The Pikachu image is not part of the React application, but we need to be able to
 interact with it within React. Open the `<Pikachu />` component and observe it renders two buttons: a button for making the
 Pikachu bigger and another one for making it smaller. You can also see that pressing the buttons will change the component's
 internal state to reflect how big the Pikachu should be. There is already a method that resizes the Pikachu based on new
@@ -64,3 +64,5 @@ By the end of this section, the test under `<Pikachu />` should be passing.
 ## Resources
 
 - [React: Component Specs and Lifecycle](https://github.com/learn-co-curriculum/react-rendering)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/react-rendering-lab'>Rendering Lab</a> on Learn.co and start learning to code for free.</p>
