@@ -1,7 +1,7 @@
-const React = require('react');
-const Circle = require('./Circle');
+import React from 'react';
+import Circle from './Circle';
 
-class Circles extends React.Component {
+export default class Circles extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,5 +34,3 @@ class Circles extends React.Component {
     );
   }
 }
-
-module.exports = Circles;

@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-class Animation extends React.Component {
+export default class Animation extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,5 +37,3 @@ class Animation extends React.Component {
     )
   }
 }
-
-module.exports = Animation;

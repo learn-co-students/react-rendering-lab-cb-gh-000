@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-class Rating extends React.Component {
+export default class Rating extends React.Component {
 
   constructor(props) {
     super(props);
@@ -26,5 +26,3 @@ class Rating extends React.Component {
     )
   }
 }
-
-module.exports = Rating;

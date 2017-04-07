@@ -1,10 +1,10 @@
-const React = require('react');
-const { shallow } = require('enzyme');
+import React from 'react';
+import { shallow } from 'enzyme';
 
-const Rating = require('../components/Rating');
-const Circle = require('../components/Circle');
-const Animation = require('../components/Animation');
-const Pikachu = require('../components/Pikachu');
+import Rating from '../components/Rating';
+import Circle from '../components/Circle';
+import Animation from '../components/Animation';
+import Pikachu from '../components/Pikachu';
 
 
 describe('Rating', () => {

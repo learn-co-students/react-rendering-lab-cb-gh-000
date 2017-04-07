@@ -1,9 +1,9 @@
-const Survey = require('./components/Survey');
-const Circles = require('./components/Circles');
-const Pikachu = require('./components/Pikachu');
-const Animation = require('./components/Animation');
-const React = require('react');
-const ReactDOM = require('react-dom');
+import Survey from './components/Survey';
+import Circles from './components/Circles';
+import Pikachu from './components/Pikachu';
+import Animation from './components/Animation';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   <div>

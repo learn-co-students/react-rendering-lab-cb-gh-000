@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-class Circle extends React.Component {
+export default class Circle extends React.Component {
 
   render() {
     const { color } = this.props;
@@ -10,5 +10,3 @@ class Circle extends React.Component {
     )
   }
 }
-
-module.exports = Circle;

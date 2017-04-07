@@ -1,11 +1,11 @@
-const React = require('react');
-const Rating = require('./Rating');
+import React from 'react';
+import Rating from './Rating';
 
 function random(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-class Survey extends React.Component {
+export default class Survey extends React.Component {
 
   constructor(props) {
     super(props);
@@ -42,5 +42,3 @@ class Survey extends React.Component {
     )
   }
 }
-
-module.exports = Survey;
