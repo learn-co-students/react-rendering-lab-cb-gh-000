@@ -11,6 +11,10 @@ export default class Animation extends React.Component {
     this.getNewCat = this.getNewCat.bind(this);
   }
 
+  componentWillUpdate() {
+    this.showLoadingBar();
+  }
+
   getNewCat() {
     fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC')
       .then((res, err) => {
