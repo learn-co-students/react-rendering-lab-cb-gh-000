@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default class Rating extends React.Component {
+class Rating extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       increasing: false,
       decreasing: false
@@ -26,3 +27,5 @@ export default class Rating extends React.Component {
     )
   }
 }
+
+export default Rating;

@@ -1,10 +1,11 @@
 import React from 'react';
 import Circle from './Circle';
 
-export default class Circles extends React.Component {
+class Circles extends React.Component {
 
   constructor(props) {
     super(props);
+    
     this.state = {
       circles: [
         { color: 'red' },
@@ -12,10 +13,9 @@ export default class Circles extends React.Component {
         { color: 'green' },
       ]
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick = () => {
     const newCircles = this.state.circles.map(circle => {
       if (circle.color === 'red') return { color: 'green' };
       if (circle.color === 'green') return { color: 'red' };
@@ -26,11 +26,17 @@ export default class Circles extends React.Component {
   }
 
   render() {
+    const renderCircles = this.state.circles.map((circle, index) => 
+      <Circle color={circle.color} key={index} /> 
+    );
+
     return (
       <div>
         <button onClick={this.handleClick}>Swap red and green</button>
-        { this.state.circles.map((circle, index) => <Circle color={circle.color} key={index} /> ) }
+        {renderCircles}
       </div>
     );
   }
 }
+
+export default Circles;
