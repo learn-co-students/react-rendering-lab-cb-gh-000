@@ -1,9 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import Survey from './components/Survey';
 import Circles from './components/Circles';
 import Pikachu from './components/Pikachu';
 import Animation from './components/Animation';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   <div>
@@ -24,7 +25,5 @@ ReactDOM.render(
       <Pikachu />
     </div>
   </div>,
-  document.getElementById('main')
+  document.getElementById('root')
 );
-
-require('./test/index-test.js'); // Leave this in!
