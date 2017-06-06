@@ -5,6 +5,7 @@ import Survey from './components/Survey';
 import Circles from './components/Circles';
 import Pikachu from './components/Pikachu';
 import Animation from './components/Animation';
+import './style.css';
 
 ReactDOM.render(
   <div>
