@@ -22,13 +22,12 @@ class Animation extends React.Component {
       .then(result => this.setState({ 
         url: result.data.fixed_height_downsampled_url
       }));
-  }
-
-  showLoadingBar = () => {
-    const progressBar = document.getElementById('progress-bar');
-    progressBar.className = 'off on';
-    setTimeout(() => progressBar.className = 'off', 1100);
-  }
+  };
+	componentWillUpdate(nextProps, nextState) {
+			const progressBar = document.getElementById('progress-bar');
+			progressBar.className = 'off on';
+			setTimeout(() => progressBar.className = 'off', 1100);
+	};
 
   render() {
     return (
