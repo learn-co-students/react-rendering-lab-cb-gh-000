@@ -1,9 +1,7 @@
 import React from 'react';
 import Rating from './Rating';
 
-function random(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
+
 
 class Survey extends React.Component {
 
