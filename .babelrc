@@ -1,13 +1,3 @@
 {
-  "presets": [
-    "env",
-    "react",
-    "stage-1"
-  ],
-  "plugins": [
-    "transform-class-properties",
-    "transform-decorators",
-    "transform-react-constant-elements",
-    "transform-react-inline-elements"
-  ]
+  "presets": ["airbnb", "es2015", "stage-0", "react"]
 }
