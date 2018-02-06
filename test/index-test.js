@@ -37,3 +37,10 @@ describe('Circle', () => {
     expect(spy.calledOnce).to.be.true;
   });
 });
+
+describe('Pikachu', () => {
+    it('re-renders the component after updating state', () => {
+      const spy = sinon.spy(Pikachu.prototype, 'componentDidUpdate')
+      expect(spy.calledOnce);
+    });
+});
