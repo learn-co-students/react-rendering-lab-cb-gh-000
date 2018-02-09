@@ -8,7 +8,11 @@ class Animation extends React.Component {
       url: " http://placehold.it/500x150",
     };
   }
-  
+
+  componentWillUpate(){
+    this.showLoadingBar()
+  }
+
   getNewCat = () => {
     fetch("http://api.giphy.com/v1/gifs/random?rating=g&api_key=dc6zaTOxFJmzC")
       .then((res, err) => {

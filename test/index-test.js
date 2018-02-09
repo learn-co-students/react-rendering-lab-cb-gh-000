@@ -36,20 +36,45 @@ describe('Circle', () => {
     wrapper.setProps({ color: 'red' });
     expect(spy.calledOnce).to.be.true;
   });
-
 });
 
+// add test: is componentWillUpate present
+
+// describe('Animation', () => {
+//   it('calls showLoadingBar() in componentWillUpdate', () => {
+//     const spy = sinon.spy(Animation.prototype, 'componentWillUpdate')
+//     expect(spy.calledOnce);
+//   });
+// });
+
 describe('Animation', () => {
-  it('componentWillUpdate is used to call showLoadingBar()', () => {
-    const spy = sinon.spy(Animation.prototype, 'componentWillUpdate')
-    expect(spy.calledOnce);
+  it('calls showLoadingBar() in componentWillUpdate', () => {
+    const selector = sinon.stub(document, 'getElementById')
+  // make sure they call "pikachu" in argument
+    selector.returns({
+      className: "off"
+    })
+
+    const wrapper = shallow(<Animation/>);
+    const spy = sinon.spy(wrapper.instance(), 'showLoadingBar')
+    wrapper.instance().componentWillUpate()
+    expect(spy.calledOnce).to.be.true
+    selector.restore()
   });
 });
 
-
 describe('Pikachu', () => {
-    it('componentDidUpdate is used to call resizePikachu() ', () => {
-      const spy = sinon.spy(Pikachu.prototype, 'componentDidUpdate')
-      expect(spy.calledOnce);
-    });
+  it('calls resizePikachu() in componentDidUpdate', () => {
+    const selector = sinon.stub(document, 'getElementById') // make sure they call "pikachu" in argument
+    selector.returns({
+      height: 100,
+      weight: 100
+    })
+
+    const wrapper = shallow(<Pikachu/>);
+    const spy = sinon.spy(wrapper.instance(), 'resizePikachu')
+    wrapper.instance().componentDidUpdate()
+    expect(spy.calledOnce).to.be.true
+    selector.restore()
+  });
 });
