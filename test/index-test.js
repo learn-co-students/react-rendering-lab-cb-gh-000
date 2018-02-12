@@ -38,19 +38,9 @@ describe('Circle', () => {
   });
 });
 
-// add test: is componentWillUpate present
-
-// describe('Animation', () => {
-//   it('calls showLoadingBar() in componentWillUpdate', () => {
-//     const spy = sinon.spy(Animation.prototype, 'componentWillUpdate')
-//     expect(spy.calledOnce);
-//   });
-// });
-
 describe('Animation', () => {
   it('calls showLoadingBar() in componentWillUpdate', () => {
     const selector = sinon.stub(document, 'getElementById')
-  // make sure they call "pikachu" in argument
     selector.returns({
       className: "off"
     })
@@ -65,7 +55,7 @@ describe('Animation', () => {
 
 describe('Pikachu', () => {
   it('calls resizePikachu() in componentDidUpdate', () => {
-    const selector = sinon.stub(document, 'getElementById') // make sure they call "pikachu" in argument
+    const selector = sinon.stub(document, 'getElementById')
     selector.returns({
       height: 100,
       weight: 100
