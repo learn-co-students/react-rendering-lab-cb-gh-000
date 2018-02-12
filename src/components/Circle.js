@@ -8,7 +8,6 @@ class Circle extends React.Component {
 
   render() {
     const { color } = this.props;
-
     return (
       <div className={`circle ${color}`}></div>
     )

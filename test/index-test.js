@@ -37,3 +37,34 @@ describe('Circle', () => {
     expect(spy.calledOnce).to.be.true;
   });
 });
+
+describe('Animation', () => {
+  it('calls showLoadingBar() in componentWillUpdate', () => {
+    const selector = sinon.stub(document, 'getElementById')
+    selector.returns({
+      className: "off"
+    })
+
+    const wrapper = shallow(<Animation/>);
+    const spy = sinon.spy(wrapper.instance(), 'showLoadingBar')
+    wrapper.instance().componentWillUpate()
+    expect(spy.calledOnce).to.be.true
+    selector.restore()
+  });
+});
+
+describe('Pikachu', () => {
+  it('calls resizePikachu() in componentDidUpdate', () => {
+    const selector = sinon.stub(document, 'getElementById')
+    selector.returns({
+      height: 100,
+      weight: 100
+    })
+
+    const wrapper = shallow(<Pikachu/>);
+    const spy = sinon.spy(wrapper.instance(), 'resizePikachu')
+    wrapper.instance().componentDidUpdate()
+    expect(spy.calledOnce).to.be.true
+    selector.restore()
+  });
+});

@@ -26,5 +26,5 @@ ReactDOM.render(
       <Pikachu />
     </div>
   </div>,
-  document.getElementById('root')
+  document.getElementById('global')
 );
