@@ -47,7 +47,7 @@ describe('Animation', () => {
 
     const wrapper = shallow(<Animation/>);
     const spy = sinon.spy(wrapper.instance(), 'showLoadingBar')
-    wrapper.instance().componentWillUpate()
+    wrapper.instance().componentWillUpdate()
     expect(spy.calledOnce).to.be.true
     selector.restore()
   });
