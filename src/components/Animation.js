@@ -31,10 +31,14 @@ class Animation extends React.Component {
     setTimeout(() => (progressBar.className = "off"), 1100);
   };
 
+  componentWillUpdate(){
+    this.showLoadingBar()
+  }
+
   render() {
     return (
       <div>
-        <img src={this.state.url} height="100px" />
+        <img src={this.state.url} alt="fds" height="100px" />
         <div>
           <button onClick={this.getNewCat}>New random .gif!</button>
         </div>
