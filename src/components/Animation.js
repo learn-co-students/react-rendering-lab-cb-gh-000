@@ -9,8 +9,8 @@ class Animation extends React.Component {
     };
   }
 
-  UNSAFE_componentWillUpdate(){
-    this.showLoadingBar();
+  componentWillUpdate(){
+    return this.showLoadingBar();
   }
 
   getNewCat = () => {
