@@ -9,7 +9,7 @@
 4. Practice using different parts of the render/update portion of the React
    component lifecycle.
 
-## Overview
+## Overview s
 
 In this module, we're going to have a go at actually using each of the component lifecycle methods.
 
